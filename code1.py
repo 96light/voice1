@@ -16,7 +16,7 @@ def callback(indata, frames, time, status):
     q.put(indata.copy())
 
 
-def recording_file( sentence, name):
+def recording( sentence, name):
     try:
         # Make sure the file is opened before recording anything:
         with sf.SoundFile(name, mode='x', samplerate=22000,
@@ -32,7 +32,7 @@ def recording_file( sentence, name):
     except KeyboardInterrupt:
         print('\nRecording finished: ' + repr(name))
 
-name='cau_18.wav'
-sentence='ấ'
+name='file.wav'
+sentence='meo meo meo meo'
 
-recording_file(sentence, name)
+recording(sentence, name)
